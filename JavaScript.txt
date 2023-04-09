@@ -1,0 +1,1122 @@
+# JavaScript: is a web based programming language. 
+-->Uses: 
+    A- Build web and mobile applications
+    B- Add interactive behaviour to webpages.
+    C- Develop games
+    D- Create command line tools
+# For working on JavaScript we need: 
+A-# Web browser
+B-# Text editor to use canbe: VS Code, Sublime Text, Replit.com(online-
+editor) and notepad.
+
+# Syntax to link Js file with html
+  <body>
+    <script src="index.js">
+
+    </script>
+    
+  </body>
+# To display we write the following below in.js extension file.
+  eg: console.log("Aimed for a vision");
+--> We can use single quotation or double quoatation.
+# eg: window.alert("This is so sensetive. Be sure before clicking");
+--> This creates the alert on the window file.
+# For comment we use //(single line) or /*   */(multi line)
+
+==========================VARIABLES==================================
+
+# Variable: is a container used to store our data.
+           it acts as value it contains.
+# We use two steps:
+   A- Declaration  ==>  var, let and const
+   B- Assignment   ==>  =// assignment operator
+# eg: let fName='Artum';
+      let size=10;
+
+        console.log(fName);
+        console.log(size);
+# eg: 
+let size='10';
+size=size+10;
+console.log(size);---> Out put is 1010.
+--> Here instead of adding it concatinates.
+# eg: console.log("How are you ",fName);
+-->It displays the concatinated value and we use comma to separate in js.
+--> We can also put + instead of , like below example:
+  eg: console.log("How are you "+fName);
+# We can also access using id.
+<body>
+    <p id="first"> </p>
+    <p id="second"> </p>
+</body>.........in HTML file
+
+---
+
+document.getElementById("first").innerHTML="Hello "+fName;
+document.getElementById("second").innerHTML="My size :"+size;
+  // 	This above 2 lines in js file
+-->This way dispaly in main page instead of console.
+
+============================Arithmetic Expression===========================
+
+# It can be a comnibation of :
+   A- Operands(which can include values,variables,...)
+   B- Operators (- * + / %)
+Ex: a=b+c+10;
+--> a,b,c are operands plus 10 as well while + sign is operator.
+#eg: a+=1;
+-->This kind of operator is called augmented assignment operator.
+
+# Operation precedence using matimatical BODMAS rule.
+  1- Partenthesis 2- Exponents 3- Multiply & Divide 4-Add & Subtract
+# eg: let answer=1/2*3+(4-2);
+      console.log(answer);
+--> answer: 3.5
+
+=========================JAVA USER INPUT===============================
+# It has 2 ways to input 
+   1- Window Prompt(easier)
+#eg : 
+let user=window.prompt("Let's get your name");
+console.log(user);
+
+   2- Html textbox
+#eg:
+  <body>  
+    <label id="usernamehtml">Enter your name</label> <br>
+    <input type="text" id="myname"><br>
+    <button type="button" id="mybutton">Submit</button> 
+  </body>
+--> The above is inside HTML file.
+let user;
+
+   document.getElementById("mybutton").onclick=function() {
+    user=document.getElementById("myname").value;
+    console.log(user);
+    // both the above 2 lines work the same way
+    document.getElementById("usernamehtml").innerHTML=user;
+    document.getElementById("mybutton").innerHTML="Thanks for submitting";
+   
+}
+--> This above on js file.
+--> The third line in js file makes our input to be displayed instead
+of the label called "Enter your name".
+
+==========================TYPE CONVERSION==============================
+# It is used to change the datatype of a value from one to another.
+Commonly we have string,number and boolean data types.
+#eg: let age=window.prompt("How old are you?");
+     age+=1;
+     console.log(age);
+-->If we put 20 as an input then the output becomes 201 which is a 
+value that we didn't expect to have because it treats it us a string
+datatype.
+
+# eg: 
+    let age=window.prompt("How old are you?");
+    age=Number(age);
+    age+=1;
+    console.log(age);
+--> Here we use constructor called Number and it gives me the result
+that I want to get which is 20+1=21.(taken from the above one)
+#eg: console.log(typeof age);
+--> Here it tells me the type of data type I use.
+#eg: 
+   let x;
+   x=Number("33.3");
+   console.log(x,typeof x);
+
+--> Output is 33.3,"number".
+#eg: 
+let x;
+x=Boolean("");
+console.log(x,typeof x);
+-->The output is false,'boolean' . The so for we put 0 inside.
+#eg: 
+   let x;
+   x=Number("cake");
+   console.log(x,typeof x);
+
+--> Output is NaN(Not a Number),"number". 
+
+=======================CONSTANTS==================================
+# Constant is a type of variable that can't be changed.
+#eg:
+const pi=3.14159;
+let radius;
+let circumfrance;
+
+radius=window.prompt('Input the radius of the circle');
+radius=Number(radius);
+
+circumfrance=2*pi*radius;
+console.log('The circumfrance of the circle is : ',circumfrance);
+
+=========================MATH==========================================
+#Math : can include round,floor(to down),ceil(to up),pow,sqrt,
+abs(absolute value-output's positive),max,min
+# eg: let a=23.54445;
+a=Math.round(a);
+console.log(a);
+--> Gives me 24 which is rounded up value.
+#eg:let a=23.54445;
+a=Math.floor(a);
+console.log(a);
+--> Gives me 23 which is floor value.
+#eg: a=Math.pow(a,2);
+--> This is power function
+#eg: 
+let a=-25.5;
+let b=3;
+let c=44;
+let maxim;
+let minim;
+maxim=Math.max(a,b,c);
+minim=Math.min(a,b,c);
+
+console.log("The max is: ",maxim);
+console.log("The min is: ",minim);
+#eg: x=Math.PI; 
+--> PI is built in function and gives us the value.
+
+#  calculate the hypotnuse for right angled triangle
+
+let a1;
+let b1;
+let c1;
+a1=window.prompt("Height: ");
+a1=Number(a1);
+
+b1=window.prompt("Base: ");
+b1=Number(b1);
+c1=Math.sqrt(Math.pow(a1,2)+Math.pow(b1,2));
+console.log("The hypotnuse is : ", c1);
+
+# The above task done using HTML input:
+  <label id="alabel">Enter Height: </label><br>
+    <input type="text" id="height" placeholder="3"><br>
+  <label id="blabel">Enter Width: </label><br>
+    <input type="text" id="width" placeholder="4"><br>
+   <button type="button" id="submitbutton">Submit</button><br>
+  <label id="clabel"> </label><br>
+--> We put the above in <body></body>
+
+let a1;
+let b1;
+let c1;
+document.getElementById("submitbutton").onclick=function(){
+
+a1=document.getElementById("height").value;
+a1=Number(a1);
+
+b1=document.getElementById("width").value;
+b1=Number(b1);
+
+c1=Math.sqrt(Math.pow(a1,2)+Math.pow(b1,2));
+
+document.getElementById("clabel").innerHTML="The result:"+c1;
+console.log(c1);
+
+}
+--> We put the above in .js file.
+
+==========================COUNTER====================================
+#eg:
+    <label id="countlabel"> 0</label>
+    <button id="decreaseBtn">decrease</button>
+    <button id="resetBtn">reset</button>
+    <button id="increaseBtn">increase</button>
+--> The above is on HTML.
+ #countlabel{
+    display: block;
+    text-align: center;
+    font-size: 50px;
+
+}
+--> The above is on CSS.
+
+let count=0;
+document.getElementById("decreaseBtn").onclick=function(){
+    count-=1;
+    document.getElementById("countlabel").innerHTML=count;
+    console.log(count);
+}
+
+document.getElementById("resetBtn").onclick=function(){
+    count=0;
+    document.getElementById("countlabel").innerHTML=count;
+    console.log(count);
+}
+document.getElementById("increaseBtn").onclick=function(){
+    count+=1;
+    document.getElementById("countlabel").innerHTML=count;
+    console.log(count);
+}
+--> The above is on CSS.js.
+
+=====================================================================
+# eg: let x=Math.random();
+      console.log(x);
+--> Display random number between 0 and 1. 
+# eg: let x=Math.floor(Math.random()*6);
+      console.log(x);
+--> It gives floor value between 0 and 6
+# eg: let x=Math.floor(Math.random()*20)+1;
+--> Give random number between 1 and 20 . if we select value for 
+rolling die we use it.
+
+==================USEFUL STRING PROPERTIES AND METHODS===============
+# eg:
+    let userName="Robel Massebo";
+    let nameLength=userName.length;
+    console.log("The length of the word is :",nameLength);
+# eg: console.log(userName.charAt(2));
+--> Gives the character at the given index position.
+# eg: console.log(userName.indexOf("l"));
+--> Displays the character at the specified index location.
+# eg: console.log(userName.lastIndexOf("o"));
+--> Display last index position of the character displayed.
+#eg: let userName="  Robel Massebo  ";
+     userName=userName.trim();
+-->trim() avoids the spaces before and after text.
+#eg: userName=userName.toLocaleUpperCase();
+--> Make it to be on uppercase.
+#eg:
+let phone="0912-828-2272";
+phone=phone.replace("-"," ");
+console.log(phone);
+
+--> it replaces only the first"-" with space if we use replaceAll 
+instead of that it will replace all .
+
+========================SLICE METHOD=====================================
+#Slice() : this method extracts a section of a string and then returns
+           it as a new string without modifying the original string.
+# eg: 
+let fullName="Robel Massebo";
+let firstName;
+let lastName;
+firstName=fullName.slice(0,5);
+lastName=fullName.slice(6);
+
+console.log("firstName: ",firstName);
+console.log("lastName: ",lastName);
+--> lastName here starts from index 6 and goes till the end.
+--> The firstName has 2 parts starting index 0 and end index 5.
+# eg: 
+let fullName="Robel Massebo";
+let firstName;
+let lastName;
+firstName=fullName.slice(0,fullName.indexOf(" "));
+lastName=fullName.slice(fullName.indexOf(" ")+1);
+
+console.log("firstName: ",firstName);
+console.log("lastName: ",lastName);
+--> Here it gives us the same values as the above one.
+--> This second way is more general and works for any inputs we use.
+
+============================METHOD CHAINING============================
+# Method chaining: is a way of calling one method after another in one
+                   continious line of code.
+# eg:
+let userName="robel";
+
+let letter=userName.charAt(0);
+letter=letter.toLocaleUpperCase();
+console.log(letter);
+--> Here we get output 
+# eg: 
+let userName="robel";
+let letter=userName.charAt(0).toLocaleUpperCase().trim();
+console.log(letter);
+--> Here in one line we have several methods called like lowercase,trim...
+
+==========================IF-STATEMENT================================
+# eg: 
+let age=44;
+if(age>20){
+    console.log('You are an adult');
+}
+else if(age<20){
+    console.log('You are young');
+}
+else {
+    console.log('You are elder')
+}
+#eg: To check using boolean.
+
+let online=true;
+if(online){
+    console.log('You are online');
+}
+else{
+    console.log('You are offline');
+}
+
+============================CHECK PROPERTY============================
+# We can make the check box and it checks usig the following format.
+# eg: 
+<label for="mycheck">Verify Here</label>
+<input type="checkbox" id="mycheck">
+-->Here the id of label for and the check box are the same.
+#eg:<label for="mycheck">Verify Here</label>
+    <input type="checkbox" id="mycheck"><br>
+    <button id="mybut">Submit</button>    
+--> We write the above in html file
+
+document.getElementById('mybut').onclick=function(){
+    
+    if(document.getElementById('mycheck').checked){
+        console.log('Thanks for Verifying');
+    }
+    else{
+        console.log('You didnot subscribe');
+
+    }
+}
+--> We write the above in .js file.
+
+# eg:
+
+    <label for="mycheck">Verify Here</label>
+    <input type="checkbox" id="mycheck"><br>
+    <label for="visaBtn">Visa</label>
+    <input type="radio" name="card" id="visaBtn"><br>
+    <label for="paypalBtn">Paypal</label>
+    <input type="radio" name="card" id="paypalBtn"><br>
+    <label for="cashBtn">Cash</label>
+    <input type="radio" name="card" id="cashBtn"><br>
+    
+    <button id="mybut">Submit</button>
+--> We write the above in html file
+
+document.getElementById('mybut').onclick=function(){
+const mycheck=document.getElementById('mycheck');
+const visaBtn=document.getElementById('visaBtn');
+const paypalBtn=document.getElementById('paypalBtn');
+const cashBtn=document.getElementById('cashBtn');
+    
+if(mycheck.checked){
+    console.log('Thanks for Verifying');
+   }
+   else{
+       console.log('You didnot subscribe');
+
+   }
+        if(visaBtn.checked){
+            console.log('Thanks you choose Visa');
+        }
+        else if(paypalBtn.checked){
+            console.log('Thanks you choose Paypal');
+        }
+        else if(cashBtn.checked){
+            console.log('Thanks you choose Cash');
+        }
+        else{
+            console.log('You have to select method of payment');
+        }
+    }
+--> We write the above in .js file
+
+============================SWITCH===================================
+#Switch: is a statement that examines a value for a match againist many
+case clauses. More efficient that many "else if" statements.
+# eg:
+
+let grade="A";
+switch(grade){
+    case "A":
+        console.log("Excellent");
+        break;
+    case "B":
+        console.log("Very Good");
+        break;
+    case "C":
+        console.log("Passed");
+        break;
+    case "F":
+        console.log("Failed");
+        break;
+    default:
+        console.log("This is not grade");
+        
+}
+=================LOGICAL OPERATORS===================================
+#And and Or are common.
+#eg: 
+let temp=55;
+if(temp<0&& temp<5){
+    console.log('It is cold temprature ');
+}
+else if(temp>5&& temp<35){
+    console.log('It is summer temprature ');
+}
+else{
+    console.log('It is so hot. Enjoy your Sawna');
+}
+# At declaring boolean we can set as:
+eg: let sunny=true;  // at declaration
+--> At calling it we can call sunny instead of writing as a whole.
+
+========================WHILE LOOP====================================
+# eg: let userName_="";
+while(userName_==""|| userName_==null){
+    userName_=window.prompt("Enter the name");
+}
+console.log('hello',userName_);
+
+# while(0==0){
+    console.log('I need help');
+}
+--> Here it is true and runs continously. Makes the computer busy.
+
+========================DO WHILE LOOP=================================
+# Instead of checking the condition first, it checks at the last. So it
+runs the code at least once.(we do first and check as the name says)
+#eg:
+let userName_="";
+do{
+    userName_=window.prompt("Enter the name");
+}while(userName_==""|| userName_==null)
+console.log('hello',userName_);
+
+=======================FOR LOOPS======================================
+#It repeats the code as much amount of times.
+#eg: 
+for(let count=10;count>0;count--){
+    console.log(count);
+}
+===========================BREAK VS CONTINUE==============================
+# break: breaks out of a loop entirely.
+# continue: skip an iteration of a loop.
+#eg: for(let count=0; count<=20; count+=2){
+    if(count==14){
+        break;
+    }
+    console.log(count);
+}
+--> It stops when it reachs 14.
+#eg: for(let count=0; count<=20; count+=2){
+    if(count==14){
+        continue;
+    }
+    console.log(count);
+}
+--> It skips 14 and then  continues the rest.
+====================NESTED LOOP======================================
+#It is a loop inside another loop.
+# eg:
+for(let count=0; count<5; count++){
+    for(let j=0; j<5; j++){
+    
+        console.log(j);
+    }
+    console.log("It is ",count);
+    
+}
+-->It takes 0 first and run the code inside the other for loop 5 times,
+then it goes to outer loop and cheak 1 then run the loop inside 5 times
+then it continues this way.
+
+# eg: 
+<label id="myRect"></label> 
+-->The above is in .html file.
+
+for(let count=0; count<5; count++){
+    for(let j=0; j<5; j++){
+    
+        document.getElementById('myRect').innerHTML+="$";
+        console.log(j);
+    }
+    document.getElementById('myRect').innerHTML+="<br>";
+    console.log("It is ",count);
+    
+}
+-->This is on .js file.
+==============================FUNCTIONS===============================
+#Function: allows us to define our code one's and use it as many times
+as we like.To perfrom the code we call our function name.
+#With out having function if we want to call the same thing at different
+time we use the way below.
+eg: 
+
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+
+# eg:
+function apl(){
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+}
+for(let i=0;i<4;i++){
+   apl();  // this function name and parentsis call our function
+}
+#
+eg: we can use the function to use which is declared in another function
+
+function begin(){
+    let user="Robel";
+    let age=22;
+    apl(user,age);
+    apl(user,age);
+}
+begin();
+
+function apl(user,age){
+console.log("Welcome here our guest",user);
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+console.log("You are ",age,"years");
+}
+-->To access user and age which are defined in another function we use
+this way.
+
+# We can also use the way below;
+eg: 
+function begin(){
+    let user="Robel";
+    let age=22;
+    apl(user,age);
+    
+}
+begin();
+
+function apl(u,a){
+console.log("Welcome here our guest",u);
+console.log("Welcome here our guest");
+console.log("Welcome here our guest");
+console.log("You are ",a,"years");
+}
+
+=============================RETURN==================================
+# Return: it returns a value back to the place where you invoked a function.
+# eg:
+let length;
+let width;
+let area;
+
+length=window.prompt("Enter the length");
+width=window.prompt("Enter the width");
+
+area=calculate_the_area(length,width);
+
+console.log("The area of the rectangle is: ",area);
+
+function calculate_the_area(length,width){
+    let answer=length*width;
+    return answer;
+    // return length*width;
+}
+
+===========================TERNARY OPERATOR==========================
+# Ternary operator: is a shortcut for an 'if-else statement'.
+# It operates using three operands:
+       1- a condition with ?
+       2- expression if True :
+       3- expression if False
+condition ? exprIfTrue:exprIfFalse
+--> We display the one after question mark if the expression given
+is true unless we display the false one.
+# With out ternary operator it looks like the one below.
+eg: 
+let adu=checkAge(10);
+console.log(adu);
+function checkAge(age){
+    if(age>18){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+--> The output is false.
+# With ternary operator the above looks like below.
+eg: 
+let adu=checkAge(10);
+console.log(adu);
+function checkAge(age){
+    return age>18?true:false;
+}
+
+# eg:
+function cheakWinner(win){
+    win?console.log('You win'):console.log('You lose');
+}
+cheakWinner(true);
+--> It will display "You win" as an output.
+
+============================LET VS VAR================================
+# Variable scope: is where the variable is accessible.
+#Let: variables are limited to block scope{}
+    -->It doesn't exist outside cally braces{}.
+#Var: variables are limited to a function(){}
+# If var is defined globally it will change the browser's window property.
+ It cause problem on window so to define globally we use let keyword.
+ Let doesn't change window properties.It is good practice to use let.
+# eg: 
+for(let i=0;i<6;i++){
+    //console.log(i);
+}
+console.log(i);
+--> Here it doesn't run our code becasue it is defined outside the
+block scope.
+# eg:
+# eg: 
+for(var i=0;i<6;i++){
+    //console.log(i);
+}
+console.log(i);
+--> Here the output will be 5 only which is the last entry of the for loop.
+
+=============================TEMPLATE LITERALS=========================
+# Template literals: delimited with (') instead of single or double 
+quotes allows embedded variables and expressions. 
+# Without embedded one
+ eg:
+let me="Robel";
+let items=3;
+let total=100;
+
+console.log("Hello",me);
+console.log("You have ",3,"items in the list");
+console.log("Your total discount price is $", total);
+# With embadded one in template literals
+eg:
+let me="Robel";
+let items=3;
+let total=100;
+
+console.log(`Hello ${me}`);
+console.log(`You have ${3} items in the list`);
+console.log(`Your total discount price is $ ${total}`);
+--> The short key `` is found below esc key near to 1 key.
+
+#eg:
+<label id="mynew"></label>  
+--> The above in .html file.
+let text=`Hello ${me} <br>You have ${3} items in the list <br>
+Your total discount price is $ ${total}`;
+
+document.getElementById('mynew').innerHTML=text;
+-->The above is written in .js file.
+
+===============TO LOCAL STRING METHOD OF NUMBERS======================= 
+# toLocaleString()-returns a string with a language sensitive 
+                  representation of this number.
+
+ number.toLocalString(locale,{options});
+
+'locale'=specify that language (undefined =default set in browser) 
+'options'=object with formatting options.
+#eg: 
+let myNum=1234456.444;
+myNum=myNum.toLocaleString("en-US"); // US English
+console.log(myNum); 
+-->separtate every thousand 1,234,456.444
+# eg: 
+myNum=myNum.toLocaleString("hi-IN");// Hindi
+-->Display 12,34,456.444
+#eg:
+myNum=myNum.toLocaleString("de-DE");// German
+-->Display 1.234.456,444
+#eg:
+myNum=myNum.toLocaleString("en-US",{style:'currency',currency:'USD'});
+-->display the number in USD as $1,234,456.44
+#eg:
+myNum=myNum.toLocaleString("hi-IN",{style:'currency',currency:'INR'});
+-->display with rupies(indian currency).
+#eg:myNum=myNum.toLocaleString(undefined,{style:"percent"});
+-->Display in percent 123,445,644% 
+#eg:
+let myNum=.5;
+myNum=myNum.toLocaleString(undefined,{style:"percent"});
+console.log(myNum);
+--> Gives us 50%.
+let myNum=.44;
+--> Gives us 44%.
+#eg:
+let myNum=40;
+myNum=myNum.toLocaleString(undefined,{style:"unit",unit:'celsius'});
+console.log(myNum);
+-->Gives us 40 degree celsius.
+#eg:
+let myNum=40;
+myNum=myNum.toLocaleString(undefined,{style:"unit",unit:'kilometer'});
+console.log(myNum);
+-->Gives us 40km.
+
+===========================ARRAYS===================================
+# Array: is like a variable that can store multiple values.
+# eg: 
+  let fruits=["Banana","Papaya", "Avocado"];
+  console.log(fruits);
+# eg: 
+  let fruits=["Banana","Papaya", "Avocado"];
+  console.log(fruits[3]);
+#eg:let fruits=["Banana","Papaya", "Avocado"];
+  fruits[2]="Orange";
+  console.log(fruits);
+# eg:
+  fruits.push("lemon"); // ADD at the end
+  fruits.pop(); //REMOVES the last index
+  fruits.unshift("Ananas");// Add at the beginning
+  fruits.shift(); // Removes the beggining element
+# eg: 
+  let a=fruits.length;
+  console.log(a);
+--> Displays the length of the array.
+#eg:
+  let fruits=["Banana","Papaya", "Avocado"];
+  let index=fruits.indexOf("Banana");
+  console.log(index);
+-->Display 0 which is the index of the given element.
+eg: let index=fruits.indexOf("Bana");
+    console.log(index);
+-->If we put something that doesn't exist we get -1(mean not found).
+
+=====================ARRAY PROPERTY===================================
+# eg:
+  let prices_list=[5,12,45,67,340];
+  for(let i=0;i<prices_list.length;i++){
+    console.log("This is the ", i ,"item:",prices_list[i]);
+  }
+-->This displays in increasing order.
+# eg:
+  let prices_list=[5,12,45,67,340];
+  for(let i=prices_list.length-1;i>=0;i--){
+    console.log("This is the ", i ,"item:",prices_list[i]);
+  }
+-->This displays in decreasing order.
+#eg:
+  let prices_list=[5,12,45,67,340];
+  for(let i of prices_list){
+    console.log(i);
+  }
+
+                 OR
+  let prices_list=[5,12,45,67,340];
+  for(let price of prices_list){
+    console.log(price);
+  }
+  
+-->This one also displays each element the same way as the above.
+=========================INSERT ARRAY OF STRING======================
+# eg:
+   let fruit=["Banana","Papaya", "Avocado"];
+  for(let fr of fruit){
+    console.log(fr);
+  }
+-->It displays each element of the array fruit.
+# eg:
+  let fruit=["Banana","Papaya", "Avocado"];
+  fruit=fruit.sort();
+  for(let fr of fruit){
+    console.log(fr);
+  }
+-->It displays each element with the sort of the array fruit.
+# fruit=fruit.toString(); // makes every letter separately displayed.
+  fruit=fruit.sort().reverse();// makes the reverese order visible.
+
+=========================2D ARRAYS(MULTIDIMENSIONAL ARRAY)=============
+# 2D ARRAY: is an array of arrays.
+# eg:
+  let first=["Banana","Papaya", "Avocado"];
+  let second=["Onion","Potato", "Antrio"];
+  let third=["cow","ox", "goat","sheep"];
+
+  let total_List=[first,second,third];
+  for(let list of total_List){
+    console.log(list);
+  }
+-->It display the array of each array with what it contains inside.
+# eg:
+  let first=["Banana","Papaya", "Avocado"];
+  let second=["Onion","Potato", "Antrio"];
+  let third=["cow","ox", "goat","sheep"];
+
+  let total_List=[first,second,third];
+  for(let list of total_List){
+    for(let last of list){
+        console.log(last);
+    }
+  }
+-->It display the array of every element separately  with what 
+   it contains inside.This is done in nested loop.
+# eg:
+  let first=["Banana","Papaya", "Avocado"];
+  let second=["Onion","Potato", "Antrio"];
+  let third=["cow","ox", "goat","sheep"];
+
+  let total_List=[first,second,third];
+  total_List[0][2]="non-avocado"; 
+  // the first for row the second is for column. Here it
+  // replaces the given one at that index with another.
+  for(let list of total_List){
+
+    for(let last of list){
+        console.log(last);
+    }
+  }
+===========================SPREAD OPERATOR============================
+# Spread Operator:allows an iterable such as an array or string to be 
+(...)            expanded in places where zero or more arguments are
+                 expected (unpacks the elements in to many pieces).
+# eg: 
+  let num=[0,1,2,3,4,5,6,7,8,9];
+  console.log(...num);
+-->Here using 3 dots in console help us to expand and write it separate.
+-->It  also works for string ones.
+#eg:
+
+let num=[0,1,2,3,4,5,6,7,8,9];
+let maximum=Math.max(num);
+console.log(maximum);
+
+-->Here it gives us NaN(not a number output) . so we follow the step below
+
+let num=[0,1,2,3,4,5,6,7,8,9];
+let maximum=Math.max(...num);
+console.log(maximum);
+ 
+#eg:
+
+let class1=['bafa','sanas','wigglesworth'];
+let class2=['rupi','peter','john'];
+class1.push(class2)
+console.log(class1);
+-->Here it gives us the entire element as an array to the index 3.
+(we need to make it modified).
+#eg:
+let class1=['bafa','sanas','wigglesworth'];
+let class2=['rupi','peter','john'];
+class1.push(...class2)
+console.log(class1);
+-->Here we use spread operator and we have each one added to the rest
+others.
+                      OR
+let class1=['bafa','sanas','wigglesworth'];
+let class2=['rupi','peter','john'];
+class1.push(...class2)
+console.log(...class1);
+
+========================REST PARAMETERS================================
+# Rest parameters:represents an indefinite number of parameters (packs-
+         (...)     arguments into an array).
+# eg:
+let z=1;
+let b=2;
+let c=3;
+let d=4;
+let e=5;
+console.log(sum(b,c));
+function sum(...numberss){
+    let tot=0;
+    for(let numb in numberss){
+        tot+=numb;
+    }
+    return tot;
+}
+--> We can add the parameter's that we want. we can add any one values
+console.log(sum(b,c,d)) here.
+============================CALLBACK===================================
+# Callback: is a function passed as an argument to another function
+and execute it later.
+# It doesn't run a function before the task is completed.
+# It helps us develop asynchronous code. (when one function has to wait
+another function) that helps to avoid errors and potential problems.
+  EX: Wait for a file to load. 
+# eg:  <label id="myLabel"></label> 
+--> The above in .html file.
+let total=sum(2,3);
+displayConsole(total);
+displayDOM(total);
+
+function sum(x,y){
+    let result=x+y;
+    return result;
+}
+
+function displayConsole(output){
+    console.log(output); // display in console
+}
+function displayDOM(output){
+    document.getElementById("myLabel").innerHTML=output; 
+// display in DOM or webpage .
+}
+-->The above in .js file.
+# eg:
+sum(2,3,displayDOM);
+sum(4,5,displayConsole);
+// it has three parameters the first two are the numbers
+// to be added and the last one is the callback
+function sum(x,y,callBack){
+    let result=x+y;
+    callBack(result);
+}
+
+function displayConsole(output){
+    console.log(output);
+}
+function displayDOM(output){
+    document.getElementById("myLabel").innerHTML=output;
+}
+--> Here we use callback.
+# eg:
+sum(2,3,displayDOM);
+sum(4,5,displayConsole);
+// it has three parameters the first two are the numbers
+// to be added and the last one is the callback
+function sum(x,y,doSomething){
+    let result=x+y;
+    doSomething(result);
+}
+
+function displayConsole(output){
+    console.log(output);
+}
+function displayDOM(output){
+    document.getElementById("myLabel").innerHTML=output;
+}
+--> We don't necessarily need to say callBack we can use any name 
+to make it call back.
+=========================FOR EACH===================================
+#array.forEach(): executes a provided callback function once for each 
+                  array element.
+# eg:
+let students=['winta','hana','lili'];
+// we want to capitalize the first letter of the words.
+students.forEach(capitalize); 
+// capitalize the first letter
+students.forEach(print);
+// call all the elements of the array
+function capitalize(element,index,array){
+    array[index]=element[0].toUpperCase()+element.substring(1);
+    // substring(1) helps to display all the letters after index 1.
+}
+function print(elele){
+    console.log(elele);
+}
+============================ARRAY MAP=================================
+# array.map(): executes a provided callback function once for each 
+               array element and creates a new array.
+# eg: 
+let numbers=[1,2,3,4,5];
+let squares=numbers.map(square);
+// here by using map method we make new array displayed.
+squares.forEach(printe);
+
+ function square(element){
+    return Math.pow(element,2);
+ }
+ function printe(element){
+    console.log(element);
+ }
+--> Display the square of each element.
+
+========================ARRAY FILTER==================================
+# array.filter(): creates a new array with all elements that pass the
+                 test provided by a function.
+# eg:
+ let ages=[30,23,34,22,33,40];
+ let adult=ages.filter(checkAge);
+ adult.forEach(printed);
+ function checkAge(element){
+    return element>=30;
+ }
+ function printed(element){
+    console.log(element);
+ }
+
+=========================ARRAY REDUCE====================================
+# array.reduce(): it reduces an array to single value.
+# It adds the value and gives us the total one we want to have.
+# eg:
+let prices=[10,22,32,33,23,44,89];
+ let total=prices.reduce(checkOut);
+ // checkOut here is the callback.
+ console.log(`The total is $ ${total}`);
+  function checkOut(total,element){
+    // total-contains the accumulated value 
+    // element- is the element that we are in.
+    return total+element;
+  }
+
+============================SORT ARRAY==================================
+# eg:
+let the_list=[77,10,42,32,33,23,44,89];
+the_list=the_list.sort(descendingSort);
+the_list.forEach(printer);
+function descendingSort(x,y){
+    return y-x;   // an descending order
+ // return x-y;   // an ascending order
+}
+function printer(element){
+    console.log(element);
+ }
+
+===================FUNCTION EXPRESSION=================================
+# function expression: is function without a name (anonymous function)
+                      avoid polluting the global scope with names 
+                      write it,then forget about it.
+# eg: 
+ function sayHello(){
+    console.log("Hello!");
+ }
+ sayHello();
+# eg:
+ const greeting =function (){
+    console.log("Hello!");
+ }
+ greeting();
+--> Here we use function expression.
+
+# eg:
+ <label id="theLabel">0</label><br>
+ <button id="decreaseButton" onclick="decreaseCount()">Decrease</button>
+ <button id="increaseButton" onclick="increaseCount()">Increase</button>
+--> The above is written in .html file.
+
+let count=0;
+function increaseCount(){
+    count+=1;
+    document.getElementById('theLabel').innerHTML=count;
+    
+ }
+ function decreaseCount(){
+    count-=1;
+    document.getElementById('theLabel').innerHTML=count;
+    
+ }
+-->This above is written on .js file.
+ 
+                         OR
+
+    <label id="theLabel">0</label><br>
+    <button id="decreaseButton" >Decrease</button>
+    <button id="increaseButton" >Increase</button>  
+--> The above in .html file.
+
+let count=0;
+document.getElementById('increaseButton').onclick=function(){
+    count+=1;
+    document.getElementById('theLabel').innerHTML=count;
+}
+
+document.getElementById('decreaseButton').onclick=function(){
+    count-=1;
+    document.getElementById('theLabel').innerHTML=count;
+  
+--> The above in .js file.  
+
+============================================================
+}

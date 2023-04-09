@@ -1,0 +1,82 @@
+================TIP: NUMBER GUESSING GAME=============================
+#<body>
+    <h1 style="color:green">GUESS THE NUMBER</h1>
+    <p>Pick a number between 1 and 10</p>
+    <label>Enter your number</label>
+    <input id="guessField">
+    <input type="submit" id="submitBtn">
+
+    <script src="index4.js"></script>
+    
+</body>
+
+--> The above inside.html file.
+
+const answer=Math.floor(Math.random()*10+1);
+  let guesses=0;
+  document.getElementById('submitBtn').onclick=function(){
+    let guess=document.getElementById('guessField').value;
+    guesses+=1;
+    if(guess==answer){
+       alert(`${answer} is the no.It took you ${guesses} guesses`);
+    }
+    else if(guess<answer){
+        alert("It is too small");
+    }
+    else{
+        alert("Too large");
+    }
+
+  }
+-->The above this on .js file.
+
+======================= TEMPRATURE CONVERTER=====================================
+--> "°" to make degree we use ALT+0176 in numeric keyboard.
+
+#   <label>Enter a temprature:</label><br>
+    <input type="text" id="textBox"><br>
+    
+    <label>convert to : </label><br>
+    <input type="radio" id="cButton" name="unit" >
+    <label>Celsius</label> <br>
+    <input type="radio" id="fButton" name="unit" >
+    <label>Fahrenheit</label> <br>
+    
+    <button type="button" id="submitButton">Submit</button><br>
+    <label id="tempLabel" style="color:red"></label>
+
+--> The above is written in .html file.
+
+ document.getElementById('submitButton').onclick=function(){
+    let temp;
+    if(document.getElementById('cButton').checked){
+        temp=document.getElementById('textBox').value;
+        temp=Number(temp);
+        temp=toCelsius(temp);
+        document.getElementById('tempLabel')
+        .innerHTML=temp+"°C";
+
+    }
+    else if(document.getElementById('fButton').checked){
+        temp=document.getElementById('textBox').value;
+        temp=Number(temp);
+        temp=toFahrenheit(temp);
+        document.getElementById('tempLabel')
+        .innerHTML=temp+"°F";
+
+    }
+    else{
+        document.getElementById('tempLabel').innerHTML=
+        "Please select a unit";
+    }
+  }
+  
+  function toCelsius(temp){
+    return 5/9*(temp-32);
+  }
+  function toFahrenheit(temp){
+    return 9/5*temp+32;
+  }
+
+-->This the above one is written on .js file.
+
